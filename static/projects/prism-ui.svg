@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="t">
+  <title id="t">Prism UI project preview</title>
+  <rect width="800" height="500" fill="#030712"/>
+  <g opacity="0.9">
+    <rect x="60" y="70" width="200" height="120" rx="16" fill="rgba(94,245,192,0.12)" stroke="rgba(94,245,192,0.45)"/>
+    <rect x="300" y="70" width="200" height="120" rx="16" fill="rgba(92,240,255,0.12)" stroke="rgba(92,240,255,0.45)"/>
+    <rect x="540" y="70" width="200" height="120" rx="16" fill="rgba(201,156,255,0.12)" stroke="rgba(201,156,255,0.45)"/>
+    <rect x="60" y="230" width="320" height="200" rx="20" fill="rgba(15,23,42,0.85)" stroke="rgba(148,163,184,0.25)"/>
+    <rect x="420" y="230" width="320" height="200" rx="20" fill="rgba(15,23,42,0.85)" stroke="rgba(148,163,184,0.25)"/>
+  </g>
+</svg>
