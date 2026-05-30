@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { SITE } from '$lib/site';
+	import { DATA } from '$lib/data';
 	import { getMode, toggleMode } from '$lib/theme.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 
@@ -38,7 +38,7 @@
 				class="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-md)] bg-[color-mix(in_oklab,var(--accent)_22%,transparent)] text-[var(--accent)] shadow-[0_0_0_1px_var(--line)] transition group-hover:scale-[1.03]"
 				aria-hidden="true">EC</span
 			>
-			<span class="hidden sm:inline">{SITE.name}</span>
+			<span class="hidden sm:inline">{DATA.profile.name}</span>
 		</a>
 
 		<nav class="hidden items-center gap-1 md:flex" aria-label="Primary">

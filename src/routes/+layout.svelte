@@ -14,6 +14,17 @@
 	onMount(() => {
 		initAppearance();
 	});
+
+	function handleSkip(event: MouseEvent) {
+		event.preventDefault();
+
+		const main = document.getElementById('main-content');
+
+		if (main) {
+			main.focus();
+			main.scrollIntoView();
+		}
+	}
 </script>
 
 <svelte:head>
@@ -30,13 +41,13 @@
 	/>
 </svelte:head>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link" onclick={handleSkip}>Skip to main content</a>
 
 <SiteHeader onOpenCommand={() => (paletteOpen = true)} />
 
 <CommandPalette bind:open={paletteOpen} />
 
-<main id="main-content" class="min-h-[calc(100dvh-4rem)]">
+<main id="main-content" tabindex="-1" class="min-h-[calc(100dvh-4rem)]">
 	{@render children()}
 </main>
 

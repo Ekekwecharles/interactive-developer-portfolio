@@ -1,17 +1,20 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import { projectCategories, projects, type ProjectCategory } from '$lib/data/projects';
+	// import { projectCategories, projects, type ProjectCategory } from '$lib/data/projects';
+	// import { projectCategories, projects, type ProjectCategory } from '$lib/data/projects';
+	import type { ProjectCategory } from '$lib/data';
+	import { DATA, projectCategories } from '$lib/data';
 	import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
 
 	let active: ProjectCategory | 'all' = $state('all');
 
 	let filtered = $derived(
-		active === 'all' ? projects : projects.filter((p) => p.category === active)
+		active === 'all' ? DATA.projects : DATA.projects.filter((p) => p.category === active)
 	);
 </script>
 
 <svelte:head>
-	<title>Projects — Alex Rivera</title>
+	<title>Projects — Ekekwe Charles</title>
 </svelte:head>
 
 <section class="border-b border-[var(--line)] py-16" aria-labelledby="projects-heading">

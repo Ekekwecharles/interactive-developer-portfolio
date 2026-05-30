@@ -1,6 +1,6 @@
 <script lang="ts">
 	import HeroSection from '$lib/components/sections/HeroSection.svelte';
-	import { projects } from '$lib/data/projects';
+	import { DATA } from '$lib/data';
 	import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
@@ -36,24 +36,7 @@
 			</p>
 		</div>
 		<div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-			{#each [
-				{
-					skill: 'React / Vue / Svelte',
-					desc: 'Comfortable switching frameworks while maintaining consistent UI architecture and patterns.'
-				},
-				{
-					skill: 'Next.js & SvelteKit',
-					desc: 'Building SSR/SPA hybrid apps with routing, data loading, and real-world performance considerations.'
-				},
-				{
-					skill: 'TypeScript Systems',
-					desc: 'Writing predictable, scalable code with strong typing and reusable frontend abstractions.'
-				},
-				{
-					skill: 'A11y + Performance',
-					desc: 'Designing interfaces that are accessible by default and optimized for real-world devices.'
-				}
-			] as item, i}
+			{#each [{ skill: 'React / Vue / Svelte', desc: 'Comfortable switching frameworks while maintaining consistent UI architecture and patterns.' }, { skill: 'Next.js & SvelteKit', desc: 'Building SSR/SPA hybrid apps with routing, data loading, and real-world performance considerations.' }, { skill: 'TypeScript Systems', desc: 'Writing predictable, scalable code with strong typing and reusable frontend abstractions.' }, { skill: 'A11y + Performance', desc: 'Designing interfaces that are accessible by default and optimized for real-world devices.' }] as item, i}
 				<div
 					class="rounded-[var(--radius-lg)] border border-[var(--line)] bg-[color-mix(in_oklab,var(--surface-1)_90%,transparent)] p-5 shadow-[var(--shadow-glow)]"
 					in:fly={{ y: 16, duration: 420, easing: cubicOut, delay: 60 + i * 70 }}
@@ -105,7 +88,7 @@
 			</a>
 		</div>
 		<div class="mt-10 grid gap-8 lg:grid-cols-2">
-			{#each projects.slice(0, 2) as project, index (project.slug)}
+			{#each DATA.projects.slice(0, 2) as project, index (project.slug)}
 				<ProjectCard {project} {index} />
 			{/each}
 		</div>

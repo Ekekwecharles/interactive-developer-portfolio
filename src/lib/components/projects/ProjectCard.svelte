@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { scale } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
-	import type { Project } from '$lib/data/projects';
+	import type { Project } from '$lib/data';
 
 	let { project, index = 0 }: { project: Project; index?: number } = $props();
 </script>

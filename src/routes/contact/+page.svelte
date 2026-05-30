@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Contact — Alex Rivera</title>
+	<title>Contact — Ekekwe Charles</title>
 </svelte:head>
 
 <section class="border-b border-[var(--line)] py-16" aria-labelledby="contact-heading">
@@ -38,8 +38,8 @@
 			Tell me about the build
 		</h1>
 		<p class="mt-4 text-base text-[var(--text-1)]">
-			This form posts to a SvelteKit server action with Zod validation. Wire Resend (or similar) via
-			environment variables — keys never ship to the browser.
+			Have a product idea, frontend challenge, or collaboration in mind? I’m always interested in
+			building thoughtful, high-performance web experiences.
 		</p>
 	</div>
 </section>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
-	import { SITE } from '$lib/site';
+	import { DATA } from '$lib/data';
 	import Button from '$lib/components/ui/Button.svelte';
 	import ParticleCanvas from '$lib/components/effects/ParticleCanvas.svelte';
 	import IconGithub from '$lib/components/ui/IconGithub.svelte';
@@ -37,16 +37,16 @@
 			class="font-[family-name:var(--font-display)] text-[clamp(2.4rem,6vw,4rem)] leading-[1.05] font-semibold tracking-tight text-[var(--text-0)]"
 			in:fly={{ y: 18, duration: 520, easing: cubicOut, delay: 90 }}
 		>
-			{SITE.name}
+			{DATA.profile.name}
 			<span class="block text-[clamp(1.1rem,3vw,1.6rem)] font-medium text-[var(--text-1)]">
-				{SITE.title}
+				{DATA.profile.role}
 			</span>
 		</h1>
 		<p
 			class="mt-6 max-w-2xl text-lg leading-relaxed text-[var(--text-1)]"
 			in:fade={{ duration: 480, delay: 140 }}
 		>
-			{SITE.intro}
+			{DATA.profile.intro}
 		</p>
 
 		<div class="mt-10 flex flex-wrap items-center gap-3" in:fade={{ duration: 480, delay: 200 }}>
@@ -56,7 +56,7 @@
 		</div>
 
 		<div class="mt-12 flex flex-wrap gap-3" in:fade={{ duration: 480, delay: 260 }}>
-			{#each SITE.socials as s (s.href)}
+			{#each DATA.profile.socials as s (s.href)}
 				<a
 					href={s.href}
 					target="_blank"
@@ -74,7 +74,7 @@
 				</a>
 			{/each}
 			<a
-				href={SITE.schedulingUrl}
+				href={DATA.bookCallLink}
 				class="inline-flex items-center gap-2 rounded-[var(--radius-md)] border border-dashed border-[color-mix(in_oklab,var(--accent)_45%,transparent)] px-4 py-2 text-sm font-medium text-[var(--text-1)] transition hover:text-[var(--text-0)]"
 				target="_blank"
 				rel="noreferrer"

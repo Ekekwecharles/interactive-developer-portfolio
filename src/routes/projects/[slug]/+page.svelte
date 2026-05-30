@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>{project.title} — Alex Rivera</title>
+	<title>{project.title} — Ekekwe Charles</title>
 	<meta name="description" content={project.short} />
 </svelte:head>
 
@@ -124,12 +124,12 @@
 						</li>
 					{/each}
 				</ul>
-				<p class="mt-6 text-xs leading-relaxed text-[var(--text-2)]">
+				<!-- <p class="mt-6 text-xs leading-relaxed text-[var(--text-2)]">
 					Links open in a new tab. Replace demo/repo URLs in <code
 						class="rounded bg-[var(--surface-0)] px-1 py-0.5 text-[11px]"
 						>src/lib/data/projects.ts</code
 					>.
-				</p>
+				</p> -->
 			</aside>
 		</div>
 	</section>

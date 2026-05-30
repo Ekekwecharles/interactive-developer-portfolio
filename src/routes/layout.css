@@ -174,3 +174,7 @@ html[data-theme='light'][data-accent='emerald'] {
 		scroll-behavior: auto !important;
 	}
 }
+
+#main-content:focus {
+	outline: none;
+}

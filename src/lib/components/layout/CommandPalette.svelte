@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { fade, scale } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
-	import { projects } from '$lib/data/projects';
+	import { DATA } from '$lib/data';
 	import { toggleMode, cycleAccent } from '$lib/theme.svelte';
 
 	type LinkItem = { kind: 'link'; label: string; href: string; hint: string };
@@ -41,7 +41,7 @@
 
 	let items = $derived.by(() => {
 		const q = query.trim().toLowerCase();
-		const proj: LinkItem[] = projects
+		const proj: LinkItem[] = DATA.projects
 			.filter((p) => `${p.title} ${p.stack.join(' ')}`.toLowerCase().includes(q))
 			.map((p) => ({
 				kind: 'link' as const,
