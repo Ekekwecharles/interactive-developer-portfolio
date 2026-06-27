@@ -290,6 +290,58 @@ export const DATA = {
 			liveUrl: 'https://github.com/Ekekwecharles/AI-Page-Summarizer',
 			githubUrl: 'https://github.com/Ekekwecharles/AI-Page-Summarizer',
 			highlight: 'AI summarization tool'
+		},
+
+		{
+			slug: 'meetmind',
+			title: 'MeetMind',
+			short: 'AI meeting agent SDK for live interviews and calls.',
+			description:
+				'MeetMind is an AI-powered meeting and interview agent platform that embeds a context-aware AI participant directly into live Zoom and Google Meet sessions. Unlike passive transcription tools, the agent joins as a visible named participant — pre-loaded with session context such as job descriptions, candidate CVs, and scoring criteria — and actively speaks, asks follow-up questions, and captures structured notes throughout the session. Users configure agent behavior, review post-session summaries and interview scorecards, and query the full conversation record in natural language via an "Ask Mind" feature.',
+			stack: [
+				'Next.js',
+				'React',
+				'TypeScript',
+				'Tailwind CSS',
+				'TanStack Query',
+				'TanStack Table',
+				'LiveKit',
+				'Vercel AI SDK',
+				'Zustand',
+				'Zod'
+			],
+			category: 'product',
+			image: '/projects/meetmind.png',
+			imageAlt: 'MeetMind AI interview agent dashboard',
+			liveUrl: 'https://meetmind.hng14.com/',
+			githubUrl: 'https://github.com/hngprojects/meetmind-ui',
+			highlight: 'AI interview agent'
+		},
+
+		{
+			slug: 'snowbank',
+			title: 'SnowBank',
+			short: 'Full-stack digital banking platform.',
+			description:
+				'A production-grade digital banking web application featuring user authentication, account management, fund transfers, transaction history, and spending analytics. Built with a focus on security and user experience, it includes email notifications via Resend, interactive financial charts, animated UI transitions, and a fully responsive design across all devices.',
+			stack: [
+				'Next.js',
+				'TypeScript',
+				'Tailwind CSS',
+				'MongoDB',
+				'Prisma',
+				'NextAuth',
+				'TanStack Query',
+				'Recharts',
+				'Framer Motion',
+				'Resend'
+			],
+			category: 'product',
+			image: '/projects/snowbank.png',
+			imageAlt: 'SnowBank digital banking dashboard',
+			liveUrl: '',
+			githubUrl: '',
+			highlight: 'Digital banking platform'
 		}
 	],
 
