@@ -218,6 +218,20 @@ export const DATA = {
 
 	projects: [
 		{
+			slug: 'redline-type-racer',
+			title: 'REDLINE',
+			short: 'Type fast. Drive furious.',
+			description:
+				'A Solo/Mutiplayer typing-speed racing game where WPM is the throttle — every correct keystroke pushes your vehicle forward, and every mistake sends it backward by a configurable penalty. Features a car garage with unlockable vehicles, adjustable difficulty and race-length settings, XP/leveling progression, and real cross-device multiplayer via Pusher presence channels. Supports guest play against AI with zero friction, or account-based play with persisted stats, achievements, and race history.',
+			stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Prisma', 'NextAuth', 'Pusher'],
+			category: 'product',
+			image: '/projects/redline.png',
+			imageAlt: 'REDLINE typing race game with car garage and live race track',
+			liveUrl: 'https://redline-type-racer.vercel.app/',
+			githubUrl: 'https://github.com/Ekekwecharles/Redline-Type-Racer',
+			highlight: 'Typing-speed racing game'
+		},
+		{
 			slug: 'end-2-end-encrypted-chat-app',
 			title: 'End-to-End Encrypted Chat App',
 			short: 'Secure realtime chat with encryption.',
@@ -339,8 +353,8 @@ export const DATA = {
 			category: 'product',
 			image: '/projects/snowbank.png',
 			imageAlt: 'SnowBank digital banking dashboard',
-			liveUrl: '',
-			githubUrl: '',
+			liveUrl: 'https://snow-bank.vercel.app/',
+			githubUrl: 'https://github.com/Ekekwecharles/SnowBank',
 			highlight: 'Digital banking platform'
 		}
 	],

@@ -29,16 +29,16 @@
 			</p>
 			<div class="mt-8 flex flex-wrap gap-3">
 				<a
-					class="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[color-mix(in_oklab,var(--accent)_22%,transparent)] px-4 py-2 text-sm font-semibold text-[var(--text-0)] shadow-[0_0_0_1px_var(--line)] transition hover:-translate-y-0.5"
-					href={project.demoUrl}
+					class="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[color-mix(in_oklab,var(--accent)_22%,transparent)] px-4 py-2 text-sm font-semibold text-[var(--text-0)] shadow-[0_0_0_1px_var(--line)] transition hover:-translate-y-0.5 hover:cursor-pointer"
+					href={project.liveUrl}
 					target="_blank"
 					rel="noreferrer"
 				>
 					Live demo
 				</a>
 				<a
-					class="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-[var(--line)] px-4 py-2 text-sm font-semibold text-[var(--text-0)] transition hover:border-[color-mix(in_oklab,var(--accent)_40%,transparent)]"
-					href={project.repoUrl}
+					class="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-[var(--line)] px-4 py-2 text-sm font-semibold text-[var(--text-0)] transition hover:cursor-pointer hover:border-[color-mix(in_oklab,var(--accent)_40%,transparent)]"
+					href={project.githubUrl}
 					target="_blank"
 					rel="noreferrer"
 				>
