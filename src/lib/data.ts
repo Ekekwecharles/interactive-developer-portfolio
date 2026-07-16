@@ -356,6 +356,29 @@ export const DATA = {
 			liveUrl: 'https://snow-bank.vercel.app/',
 			githubUrl: 'https://github.com/Ekekwecharles/SnowBank',
 			highlight: 'Digital banking platform'
+		},
+
+		{
+			slug: 'audiophile',
+			title: 'Audiophile',
+			short: 'Full-stack e-commerce store for premium audio gear.',
+			description:
+				'A full-stack e-commerce storefront for premium audio equipment — headphones, speakers, and earphones — built with Next.js and Convex. Users can browse products by category, view dynamic product detail pages with features and specs, manage a persistent shopping cart, and complete a full checkout flow with form validation and order confirmation. Order confirmation emails are sent via Resend/Nodemailer, with product and site content managed through a Convex backend.',
+			stack: [
+				'Next.js',
+				'React',
+				'TypeScript',
+				'Tailwind CSS',
+				'Convex',
+				'React Hook Form',
+				'Resend'
+			],
+			category: 'product',
+			image: '/projects/audiophile.png',
+			imageAlt: 'Audiophile e-commerce storefront with product listings and checkout',
+			liveUrl: 'https://audiophile-one-xi.vercel.app/',
+			githubUrl: 'https://github.com/Ekekwecharles/audiophile',
+			highlight: 'E-commerce audio storefront'
 		}
 	],
 
