@@ -379,6 +379,21 @@ export const DATA = {
 			liveUrl: 'https://audiophile-one-xi.vercel.app/',
 			githubUrl: 'https://github.com/Ekekwecharles/audiophile',
 			highlight: 'E-commerce audio storefront'
+		},
+
+		{
+			slug: 'nextjs-portfolio-project',
+			title: 'Portfolio Site',
+			short: 'Personal portfolio showcasing projects, stack, and experience.',
+			description:
+				'A personal portfolio website built with Next.js, presenting selected projects, technical stack, work history, and background as a frontend engineer. Includes a hero section with availability status, a categorized stack breakdown, a curated project showcase with tech tags and highlights for each build, a work experience timeline, and an about section. Designed with smooth motion and a clean, production-grade UI to reflect real shipped work rather than a template.',
+			stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'shadcn/ui'],
+			category: 'product',
+			image: '/projects/nextjs-portfolio-project.png',
+			imageAlt: 'Portfolio homepage with hero section, stack, and project showcase',
+			liveUrl: 'https://nextjs-portfolio-project-vert.vercel.app/',
+			githubUrl: 'https://github.com/Ekekwecharles/nextjs-portfolio-project',
+			highlight: 'Personal portfolio site'
 		}
 	],
 
