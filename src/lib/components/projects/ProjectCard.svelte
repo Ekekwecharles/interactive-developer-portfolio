@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { scale } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
-	import type { Project } from '$lib/data';
+	import { categoryLabel, type Project } from '$lib/data';
 
 	let { project, index = 0 }: { project: Project; index?: number } = $props();
 </script>
@@ -43,11 +43,14 @@
 						{project.title}
 					</h2>
 					<p class="mt-1 text-sm text-[var(--text-1)]">{project.short}</p>
+					{#if project.role}
+						<p class="mt-2 text-xs font-medium text-[var(--accent)]">{project.role}</p>
+					{/if}
 				</div>
 				<span
 					class="shrink-0 rounded-[var(--radius-sm)] border border-[var(--line)] px-2 py-1 text-[10px] font-semibold tracking-[0.18em] text-[var(--text-2)] uppercase"
 				>
-					{project.category}
+					{categoryLabel[project.category]}
 				</span>
 			</div>
 			<div class="flex flex-wrap gap-2">
@@ -61,7 +64,7 @@
 			</div>
 			<div class="flex flex-wrap gap-3 pt-2 text-sm font-semibold text-[var(--accent)]">
 				<span class="inline-flex items-center gap-1">
-					View case
+					View project
 					<svg
 						class="h-4 w-4 transition group-hover:translate-x-0.5"
 						viewBox="0 0 24 24"

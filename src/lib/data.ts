@@ -18,9 +18,10 @@ type Experience = {
 	company: string;
 	period: string;
 	points: string[];
+	link?: string;
 };
 
-export type ProjectCategory = 'product' | 'oss' | 'experiment';
+export type ProjectCategory = 'team' | 'product' | 'experiment';
 
 export type Project = {
 	slug: string;
@@ -34,6 +35,11 @@ export type Project = {
 	liveUrl: string;
 	githubUrl: string;
 	highlight?: string;
+	role?: string;
+	context?: string;
+	contributions?: { title: string; detail: string }[];
+	liveLabel?: string;
+	githubLabel?: string;
 };
 
 export type Data = {
@@ -45,6 +51,10 @@ export type Data = {
 		email: string;
 		socials: Social[];
 		summary: string;
+		location: string;
+		availability: string;
+		stats: { value: string; label: string }[];
+		resumePdf: string;
 	};
 
 	skills: {
@@ -53,6 +63,7 @@ export type Data = {
 		tools: string[];
 		languages: string[];
 		aiWorkflow: string[];
+		payments: string[];
 	};
 
 	experience: Experience[];
@@ -71,16 +82,24 @@ export type Data = {
 export const DATA = {
 	profile: {
 		name: 'Ekekwe Charles',
-		role: 'Full-Stack Engineer (Frontend-leaning)',
+		role: 'AI Product Engineer & Full-Stack Engineer',
 		tagline:
-			'Building scalable, interactive web interfaces with React, Vue, Svelte, and modern web tools.',
+			'I build AI-powered products end to end with React, Next.js, TypeScript and Node.js.',
 		intro:
-			'I design and build product-grade web experiences: crisp interactions, accessible defaults, and bundles that stay fast on real devices.',
+			'Two-time HNG Internship Finalist and part of the team behind Ziki and Zedu, two live AI products. On Ziki I built the money side end to end: in-app coins, payments, withdrawals and subscriptions.',
 		email: 'ekekwecharles50@gmail.com',
+		location: 'Port Harcourt, Nigeria',
+		availability: 'Open to full-time roles · Remote, hybrid or on-site',
+		resumePdf: '/Ekekwe_Charles_Resume.pdf',
+		stats: [
+			{ value: '2×', label: 'HNG Internship Finalist' },
+			{ value: '2', label: 'Live AI products shipped with a team' },
+			{ value: '3+ yrs', label: 'Freelance full-stack delivery' }
+		],
 		socials: [
 			{
 				label: 'GitHub',
-				href: 'https://github.com/Ekekwecharles?tab=repositories',
+				href: 'https://github.com/Ekekwecharles',
 				icon: 'github'
 			},
 			{
@@ -91,104 +110,117 @@ export const DATA = {
 			{ label: 'X', href: 'https://x.com/xharlessnow', icon: 'x' }
 		],
 		summary:
-			'Full-Stack Engineer focused on building high-performance, scalable web applications and modern UI systems. Experienced with React, Next.js, TypeScript, Node.js, and serverless architectures, with expanding expertise in Vue, Svelte, and design systems like shadcn/ui. Strong systems thinking background from Electrical Engineering and intensive training from ALX Africa and HNG Internship. Highly adaptable, production-ready engineer who learns new stacks quickly and delivers under pressure using modern AI-assisted development tools.'
+			'AI Product Engineer and full-stack engineer, and a two-time HNG Internship Finalist (HNG 14 Software Engineering, HNG 15 AI Product Engineering). Part of the team that built Ziki, a platform where AI agents and developers fix software and get paid, and Zedu, an AI-powered learning platform for bootcamps and schools. On Ziki I built the money side end to end: in-app coins, payments, withdrawals and subscriptions. I work mainly in React, Next.js, TypeScript and Node.js, and ship fast using AI coding agents without dropping review standards.'
 	},
 
 	skills: {
+		aiWorkflow: [
+			'LLM integration',
+			'AI agents & agentic workflows',
+			'Multi-agent development (Claude Code, Codex)',
+			'Prompt engineering',
+			'Vercel AI SDK',
+			'LiveKit'
+		],
+
 		frontend: [
 			'React',
-			'Next.js',
+			'Next.js (App Router)',
 			'TypeScript',
-			'Vue.js',
-			'Svelte',
 			'Tailwind CSS',
 			'Redux Toolkit',
 			'React Query',
-			'Styled Components',
+			'Zustand',
 			'shadcn/ui',
 			'Framer Motion',
-			'Lottie'
+			'Vue.js',
+			'Svelte / SvelteKit'
 		],
 
 		backend: [
 			'Node.js',
-			'Next.js API Routes (Serverless)',
+			'Next.js API Routes',
 			'REST APIs',
+			'Go',
+			'PostgreSQL',
+			'MongoDB',
+			'Prisma',
+			'Drizzle ORM',
+			'Auth.js / NextAuth',
 			'Supabase',
-			'Firebase',
-			'NextAuth.js',
-			'MongoDB'
+			'Firebase'
+		],
+
+		payments: [
+			'In-app currency & wallets',
+			'Withdrawals',
+			'Subscriptions & billing',
+			'Paystack (checkout & webhooks)'
 		],
 
 		tools: [
-			'Git/GitHub',
-			'CI/CD basics',
-			'Socket.IO',
-			'Performance Optimization',
-			'Responsive Design',
-			'Accessibility',
-			'Data Visualization (Recharts, ECharts)'
+			'Git / GitHub',
+			'Code review',
+			'Docker',
+			'CI/CD',
+			'Vercel',
+			'GitHub API',
+			'Cloudinary',
+			'Resend',
+			'Pusher',
+			'Socket.IO / WebSockets'
 		],
 
-		languages: ['JavaScript', 'TypeScript', 'Python', 'SQL', 'HTML', 'CSS'],
-
-		aiWorkflow: [
-			'ChatGPT',
-			'Cursor',
-			'GitHub Copilot',
-			'AI-assisted debugging',
-			'Rapid stack learning',
-			'Code refactoring with AI'
-		]
+		languages: ['JavaScript', 'TypeScript', 'Go', 'Python', 'SQL', 'HTML', 'CSS']
 	},
 
 	experience: [
 		{
-			role: 'Software Engineer (Finalist)',
-			company: 'HNG Internship',
-			period: '2026',
+			role: 'AI Product Engineer (Finalist)',
+			company: 'HNG Internship · HNG 15',
+			period: 'Sep 2026 – Nov 2026',
 			points: [
-				'Completed the HNG Software Engineering Internship and graduated as a Finalist',
-				'Built and shipped production-level applications under strict deadlines and real-world constraints',
-				'Collaborated in fast-paced, remote engineering teams using Git-based workflows',
-				'Strengthened skills in full-stack development, API integration, and deployment workflows',
-				'Delivered solutions under pressure while maintaining code quality and performance standards'
+				'Graduated as a Finalist in the AI Product Engineering track, a remote, elimination-based program where every stage must be passed to continue',
+				'Part of the team that built Ziki (ziki.dev). Built five of its features, including the full coins, payments and withdrawal system and subscriptions, and still contributing',
+				'Built features and fixed bugs on Zedu (zedu.chat) across its web app, desktop app and Go backend, and on Zedu Office, its 3D virtual-office version',
+				'Built and launched snowaregadgets.com, a full e-commerce store with online payments and an admin dashboard, and contributed to StartNG (start.ng)'
 			]
 		},
-
+		{
+			role: 'Software Engineer (Finalist)',
+			company: 'HNG Internship · HNG 14',
+			period: 'Jan 2026 – Jun 2026',
+			points: [
+				'Graduated as a Finalist from the HNG Software Engineering Internship, a highly competitive, deadline-driven program',
+				'Built MeetMind (an AI interview agent for live Zoom and Google Meet calls), REDLINE (a realtime multiplayer typing-race game) and an end-to-end encrypted chat app',
+				'Worked in fast-paced remote teams using Git-based workflows and code review standards'
+			]
+		},
 		{
 			role: 'Full-Stack / Frontend Engineer',
-			company: 'Upwork',
+			company: 'Upwork (Freelance)',
 			period: 'Jan 2023 – Present',
 			points: [
-				'Delivered production-ready web applications for international clients',
-				'Integrated REST APIs, authentication systems, and payment workflows',
-				'Built scalable UI components with strong focus on performance and accessibility',
-				'Worked directly with clients in fast-paced, remote environments'
+				'Delivered production-ready web applications for international clients across fintech, e-commerce, and SaaS',
+				'Integrated REST APIs, authentication systems, and payment workflows into client-facing products',
+				'Built scalable, accessible UI components, working directly with clients in fast-paced remote environments'
 			]
 		},
-
 		{
 			role: 'Frontend Engineer & Mentor',
 			company: 'ALX Africa',
 			period: 'Dec 2022 – Nov 2024',
 			points: [
-				'Built production-grade applications and real-world clones in agile teams',
-				'Mentored junior developers in full-stack development and Git workflows',
-				'Conducted code reviews and supported deployment pipelines',
-				'Collaborated on scalable frontend architecture using React ecosystems'
+				'Built production-grade applications and real-world clones in agile teams as part of an intensive software engineering program',
+				'Mentored junior developers in full-stack development, Git workflows, and code review practices'
 			]
 		},
-
 		{
 			role: 'Lead Engineer & Operations Manager',
 			company: 'Snoware Gadgets & Partner Shops',
 			period: 'Jun 2015 – Present',
 			points: [
-				'Led technical operations in device diagnostics and repair services',
-				'Managed and trained junior technicians to improve efficiency',
-				'Oversaw sales, customer support, and vendor relationships',
-				'Drove business operations and growth as lead manager'
+				'Run a phone and gadget business: device diagnostics and repair, training junior technicians, sales, customer support and vendor relationships'
 			]
 		}
 	],
@@ -199,215 +231,277 @@ export const DATA = {
 			degree: 'B.Eng Electrical & Electronics Engineering',
 			period: '2017 – 2022'
 		},
-
+		{
+			school: 'HNG Internship',
+			degree: 'Finalist: HNG 14 (Software Engineering) and HNG 15 (AI Product Engineering)',
+			period: '2026'
+		},
 		{
 			school: 'ALX Africa',
 			degree: 'Software Engineering Program',
 			period: '2022 – 2024',
 			details: 'C, Bash, Linux, Python, Flask, Django, JavaScript, React, systems programming'
-		},
-
-		{
-			school: 'HNG Internship',
-			degree: 'Software Engineering Internship',
-			period: 'Intensive Program',
-			details:
-				'Real-world, production-level engineering under tight deadlines with collaborative teams'
 		}
 	],
 
 	projects: [
 		{
-			slug: 'redline-type-racer',
-			title: 'REDLINE',
-			short: 'Type fast. Drive furious.',
+			slug: 'ziki',
+			title: 'Ziki',
+			short: 'Open-source platform where AI agents and developers fix software and get paid.',
 			description:
-				'A Solo/Mutiplayer typing-speed racing game where WPM is the throttle — every correct keystroke pushes your vehicle forward, and every mistake sends it backward by a configurable penalty. Features a car garage with unlockable vehicles, adjustable difficulty and race-length settings, XP/leveling progression, and real cross-device multiplayer via Pusher presence channels. Supports guest play against AI with zero friction, or account-based play with persisted stats, achievements, and race history.',
-			stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Prisma', 'NextAuth', 'Pusher'],
+				'Owners post bugs and ideas; AI agents and human developers pick them up, fix them and get paid. Every ticket moves through a full delivery pipeline (open, in progress, submitted, ready to merge, merged) handled by working, manager and merger agents, with a shared mistake registry and human review for major product changes. Agents connect through a paired API key, a live work feed and an MCP server, so any agent can join and follow the same rules.',
+			role: 'Core team member · HNG 15 · still contributing',
+			context: 'Team product, live at ziki.dev',
+			contributions: [
+				{
+					title: 'Ziki coins, payments and withdrawals',
+					detail:
+						'Built the whole in-app currency flow: customers buy coins, the people and agents who deliver work earn them, and they withdraw to their own accounts.'
+				},
+				{
+					title: 'Subscriptions and payments',
+					detail: 'Built Ziki’s subscription plans and the payment flow behind them.'
+				},
+				{
+					title: 'GitHub status',
+					detail:
+						'Shows inside a Ziki issue what is blocking its pull request from merging, so the owner can act on it or send it back to the fixer without leaving Ziki.'
+				},
+				{
+					title: 'PR relink',
+					detail:
+						'When a fixer’s pull request is closed without merging, they can link a replacement to the same issue instead of waiting for a manager.'
+				},
+				{
+					title: '“Ask someone else”',
+					detail:
+						'When an agent escalates a question, the owner can pass it to the teammate best placed to answer it.'
+				}
+			],
+			stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Auth.js', 'Docker'],
+			category: 'team',
+			image: '/projects/ziki.webp',
+			imageAlt: 'Ziki homepage: “1000 agents build and market your product”',
+			liveUrl: 'https://ziki.dev',
+			githubUrl: 'https://github.com/emerjent/ziki',
+			liveLabel: 'ziki.dev',
+			githubLabel: 'emerjent/ziki',
+			highlight: 'AI agent marketplace'
+		},
+		{
+			slug: 'zedu',
+			title: 'Zedu',
+			short: 'AI-powered learning platform for bootcamps, schools and learning communities.',
+			description:
+				'One workspace for running a cohort: subject channels, threaded messaging, live classes with chat, docs and a whiteboard, class recordings, AI class notes and AI agents that support learners. Runs on web, desktop and mobile, with free and paid plans.',
+			role: 'Engineer, team Neo-Mando · HNG 15',
+			context: 'Team product, live at zedu.chat',
+			contributions: [
+				{
+					title: 'Web, desktop and backend',
+					detail:
+						'Built features and fixed bugs on the Next.js web app, the desktop app and the Go backend, shipped through reviewed pull requests.'
+				},
+				{
+					title: 'Zedu Office',
+					detail: 'Worked on the frontend and backend of a 3D virtual-office version of Zedu.'
+				},
+				{
+					title: 'AI-agent workflow',
+					detail:
+						'Set up a five-agent AI coding team (builder, verifier, reviewer, observer and a lead agent, each in its own Git worktree) to clear Zedu Desktop tickets, passing the team’s 3,000-point delivery target.'
+				}
+			],
+			stack: ['Next.js', 'TypeScript', 'Go', 'Flutter (desktop)'],
+			category: 'team',
+			image: '/projects/zedu.webp',
+			imageAlt: 'Zedu homepage: “Built for bootcamps and learning communities”',
+			liveUrl: 'https://zedu.chat',
+			githubUrl: 'https://github.com/zeduchat',
+			liveLabel: 'zedu.chat',
+			githubLabel: 'github.com/zeduchat',
+			highlight: 'AI learning platform'
+		},
+		{
+			slug: 'snoware-gadgets-store',
+			title: 'Snoware Gadgets Store',
+			short: 'Live e-commerce platform for a phone and gadget business.',
+			description:
+				'A full online store for my phone and gadget business in Port Harcourt: product catalogue across phones, laptops, gaming and Starlink, checkout with Paystack, email/password and Google sign-in, order emails, and an admin dashboard for products, stock, photos, delivery zones and fees, and homepage banners.',
+			role: 'Sole engineer · built and launched',
+			context: 'Live business store, taking real orders',
+			contributions: [
+				{
+					title: 'Payments that never double-charge',
+					detail:
+						'Paystack checkout with one shared confirmation path for both the redirect and the webhook, so an order is confirmed exactly once.'
+				},
+				{
+					title: 'Admin dashboard',
+					detail:
+						'Manage products, stock, photos, delivery zones and fees, and homepage banners without touching code.'
+				},
+				{
+					title: 'Accounts and emails',
+					detail: 'Email/password and Google sign-in, plus order confirmation emails.'
+				}
+			],
+			stack: ['Next.js 16', 'TypeScript', 'Tailwind CSS 4', 'Neon Postgres', 'Drizzle ORM', 'Auth.js', 'Paystack', 'Cloudinary', 'Nodemailer', 'Vercel'],
 			category: 'product',
-			image: '/projects/redline.png',
-			imageAlt: 'REDLINE typing race game with car garage and live race track',
-			liveUrl: 'https://redline-type-racer.vercel.app/',
-			githubUrl: 'https://github.com/Ekekwecharles/Redline-Type-Racer',
-			highlight: 'Typing-speed racing game'
+			image: '/projects/snoware.webp',
+			imageAlt: 'Snoware Gadgets store homepage featuring the iPhone 18 Pro Max',
+			liveUrl: 'https://www.snowaregadgets.com',
+			githubUrl: 'https://github.com/Ekekwecharles/Main-Snoware-Gadgets-',
+			liveLabel: 'snowaregadgets.com',
+			highlight: 'Live e-commerce'
 		},
-		{
-			slug: 'end-2-end-encrypted-chat-app',
-			title: 'End-to-End Encrypted Chat App',
-			short: 'Secure realtime chat with encryption.',
-			description:
-				'A secure end-to-end encrypted messaging system that ensures all messages are encrypted on the client before being sent and can only be decrypted by the intended recipient. It implements secure key generation and management, client-side encryption/decryption using the Web Crypto API, and a backend that stores only ciphertext without ever accessing plaintext data.',
-			stack: ['Next.js', 'TypeScript', 'WebSocket', 'WebCrypto'],
-			category: 'oss',
-			image: '/projects/chat-app.png',
-			imageAlt: 'Chat interface with encrypted message flow',
-			liveUrl: 'https://end-2-end-encryption-chat-app.vercel.app/login',
-			githubUrl: 'https://github.com/Ekekwecharles/End-2-End-Encryption-Chat-app',
-			highlight: 'Encrypted realtime chat'
-		},
-
-		{
-			slug: 'real-time-data-visualization-platform',
-			title: 'Real-Time Data Visualization Platform',
-			short: 'Live analytics dashboard with streaming data.',
-			description:
-				'A high-performance real-time analytics dashboard that visualizes streaming data using interactive charts, live-updating metrics, and dynamic activity feeds. The platform simulates production-grade monitoring systems such as trading, DevOps, and telemetry dashboards, with optimized rendering, modular architecture, and smooth real-time updates.',
-			stack: ['Vue', 'WebSocket', 'ECharts', 'TypeScript'],
-			category: 'product',
-			image: '/projects/data-viz.png',
-			imageAlt: 'Dashboard with live charts and metrics',
-			liveUrl: 'https://data-visualization-platform-five.vercel.app/',
-			githubUrl: 'https://github.com/Ekekwecharles/Data-visualization-platform',
-			highlight: 'Live analytics'
-		},
-
-		{
-			slug: 'invoice-management-app',
-			title: 'Invoice Management App',
-			short: 'Full-stack invoice tracking system.',
-			description:
-				'A production-style invoice management system for creating, tracking, and managing client invoices. It supports full CRUD operations, draft saving, payment status workflows, filtering, form validation, and persistent storage, with a fully responsive UI and light/dark mode support.',
-			stack: ['React', 'TypeScript', 'Next.js', 'Prisma', 'PostgreSQL'],
-			category: 'product',
-			image: '/projects/invoice-app.png',
-			imageAlt: 'Invoice dashboard with billing tables',
-			liveUrl: 'https://invoice-mangement-app-iyye.vercel.app/',
-			githubUrl: 'https://github.com/Ekekwecharles/invoice-mangement-app',
-			highlight: 'Smart invoice tracking'
-		},
-
-		{
-			slug: 'habit-tracker-app',
-			title: 'Habit Tracker App',
-			short: 'Mobile-first habit tracking PWA.',
-			description:
-				'Mobile-first Progressive Web App for tracking habits. It includes user authentication, protected routes, and full CRUD functionality for habits, along with daily completion tracking, streak calculation, and local data persistence. The app also supports basic PWA features like installability and offline access.',
-			stack: ['Next.js', 'TypeScript', 'MongoDB', 'Socket.IO'],
-			category: 'product',
-			image: '/projects/habit-tracker.png',
-			imageAlt: 'Mobile habit tracking dashboard',
-			liveUrl: 'https://habit-tracker-app-seven-plum.vercel.app/',
-			githubUrl: 'https://github.com/Ekekwecharles/Habit-Tracker-App',
-			highlight: 'PWA habit tracking'
-		},
-
-		{
-			slug: 'ai-page-summarizer-extension',
-			title: 'AI Page Summarizer Extension',
-			short: 'Chrome extension that summarizes web pages.',
-			description:
-				'Manifest V3 extension that extracts readable text from the active tab, sends it to a Node.js proxy, and shows a structured summary in the popup. OpenAI is called first; if that fails, Gemini is used automatically.',
-			stack: ['React', 'TypeScript', 'Node.js', 'WebExtensions API'],
-			category: 'experiment',
-			image: '/projects/ai-summarizer.png',
-			imageAlt: 'Browser extension popup showing summary',
-			liveUrl: 'https://github.com/Ekekwecharles/AI-Page-Summarizer',
-			githubUrl: 'https://github.com/Ekekwecharles/AI-Page-Summarizer',
-			highlight: 'AI summarization tool'
-		},
-
 		{
 			slug: 'meetmind',
 			title: 'MeetMind',
-			short: 'AI meeting agent SDK for live interviews and calls.',
+			short: 'AI interview agent that joins live Zoom and Google Meet calls.',
 			description:
-				'MeetMind is an AI-powered meeting and interview agent platform that embeds a context-aware AI participant directly into live Zoom and Google Meet sessions. Unlike passive transcription tools, the agent joins as a visible named participant — pre-loaded with session context such as job descriptions, candidate CVs, and scoring criteria — and actively speaks, asks follow-up questions, and captures structured notes throughout the session. Users configure agent behavior, review post-session summaries and interview scorecards, and query the full conversation record in natural language via an "Ask Mind" feature.',
-			stack: [
-				'Next.js',
-				'React',
-				'TypeScript',
-				'Tailwind CSS',
-				'TanStack Query',
-				'TanStack Table',
-				'LiveKit',
-				'Vercel AI SDK',
-				'Zustand',
-				'Zod'
+				'MeetMind embeds a context-aware AI participant directly into live Zoom and Google Meet sessions. The agent joins as a visible named participant, pre-loaded with the job description, candidate CV and scoring criteria, then speaks, asks follow-up questions and captures structured notes. Afterwards, users review summaries and interview scorecards, and can query the whole conversation in plain language with “Ask Mind”.',
+			role: 'HNG 14 team project',
+			context: 'Built during HNG 14',
+			contributions: [
+				{
+					title: 'Live AI participant',
+					detail: 'An agent that joins real calls by name and asks context-aware follow-up questions.'
+				},
+				{
+					title: 'Scorecards and “Ask Mind”',
+					detail: 'Structured interview scorecards and natural-language search over every session.'
+				}
 			],
-			category: 'product',
+			stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'TanStack Query', 'TanStack Table', 'LiveKit', 'Vercel AI SDK', 'Zustand', 'Zod'],
+			category: 'team',
 			image: '/projects/meetmind.png',
 			imageAlt: 'MeetMind AI interview agent dashboard',
 			liveUrl: 'https://meetmind.hng14.com/',
 			githubUrl: 'https://github.com/hngprojects/meetmind-ui',
 			highlight: 'AI interview agent'
 		},
-
 		{
-			slug: 'snowbank',
-			title: 'SnowBank',
-			short: 'Full-stack digital banking platform.',
+			slug: 'redline-type-racer',
+			title: 'REDLINE',
+			short: 'Realtime multiplayer typing-race game. Type fast, drive furious.',
 			description:
-				'A production-grade digital banking web application featuring user authentication, account management, fund transfers, transaction history, and spending analytics. Built with a focus on security and user experience, it includes email notifications via Resend, interactive financial charts, animated UI transitions, and a fully responsive design across all devices.',
-			stack: [
-				'Next.js',
-				'TypeScript',
-				'Tailwind CSS',
-				'MongoDB',
-				'Prisma',
-				'NextAuth',
-				'TanStack Query',
-				'Recharts',
-				'Framer Motion',
-				'Resend'
+				'A solo and multiplayer typing-speed racing game where WPM is the throttle: every correct keystroke pushes your car forward and every mistake sends it back. Features a car garage with unlockable vehicles, difficulty and race-length settings, XP and levels, and real cross-device multiplayer via Pusher presence channels. Guests can race the AI instantly, or sign in to keep stats, achievements and race history.',
+			role: 'Solo build · HNG 14',
+			contributions: [
+				{
+					title: 'Realtime multiplayer',
+					detail: 'Cross-device races kept in sync with Pusher presence channels.'
+				},
+				{
+					title: 'Progression system',
+					detail: 'XP, levels, unlockable cars, achievements and saved race history.'
+				}
 			],
+			stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Prisma', 'NextAuth', 'Pusher'],
 			category: 'product',
-			image: '/projects/snowbank.png',
-			imageAlt: 'SnowBank digital banking dashboard',
-			liveUrl: 'https://snow-bank.vercel.app/',
-			githubUrl: 'https://github.com/Ekekwecharles/SnowBank',
-			highlight: 'Digital banking platform'
+			image: '/projects/redline.png',
+			imageAlt: 'REDLINE typing race game with live race track',
+			liveUrl: 'https://redline-type-racer.vercel.app/',
+			githubUrl: 'https://github.com/Ekekwecharles/Redline-Type-Racer',
+			highlight: 'Realtime multiplayer'
 		},
-
 		{
-			slug: 'audiophile',
-			title: 'Audiophile',
-			short: 'Full-stack e-commerce store for premium audio gear.',
+			slug: 'end-2-end-encrypted-chat-app',
+			title: 'End-to-End Encrypted Chat',
+			short: 'Secure realtime chat where the server only ever sees ciphertext.',
 			description:
-				'A full-stack e-commerce storefront for premium audio equipment — headphones, speakers, and earphones — built with Next.js and Convex. Users can browse products by category, view dynamic product detail pages with features and specs, manage a persistent shopping cart, and complete a full checkout flow with form validation and order confirmation. Order confirmation emails are sent via Resend/Nodemailer, with product and site content managed through a Convex backend.',
-			stack: [
-				'Next.js',
-				'React',
-				'TypeScript',
-				'Tailwind CSS',
-				'Convex',
-				'React Hook Form',
-				'Resend'
+				'Messages are encrypted in the browser before they are sent and can only be decrypted by the intended recipient. It handles key generation and management, client-side encryption and decryption with the Web Crypto API, and a backend that stores only ciphertext and never sees plaintext.',
+			role: 'Solo build · HNG 14',
+			contributions: [
+				{
+					title: 'Client-side encryption',
+					detail: 'Keys are generated and used in the browser with the Web Crypto API.'
+				},
+				{
+					title: 'Zero-knowledge backend',
+					detail: 'The server relays and stores ciphertext only.'
+				}
 			],
+			stack: ['Next.js', 'TypeScript', 'WebSocket', 'Web Crypto'],
 			category: 'product',
-			image: '/projects/audiophile.png',
-			imageAlt: 'Audiophile e-commerce storefront with product listings and checkout',
-			liveUrl: 'https://audiophile-one-xi.vercel.app/',
-			githubUrl: 'https://github.com/Ekekwecharles/audiophile',
-			highlight: 'E-commerce audio storefront'
+			image: '/projects/chat-app.png',
+			imageAlt: 'Chat interface with encrypted message flow',
+			liveUrl: 'https://end-2-end-encryption-chat-app.vercel.app/login',
+			githubUrl: 'https://github.com/Ekekwecharles/End-2-End-Encryption-Chat-app',
+			highlight: 'Encrypted chat'
 		},
-
 		{
-			slug: 'nextjs-portfolio-project',
-			title: 'Portfolio Site',
-			short: 'Personal portfolio showcasing projects, stack, and experience.',
+			slug: 'real-time-data-visualization-platform',
+			title: 'Real-Time Data Visualization Platform',
+			short: 'Live analytics dashboard with streaming data.',
 			description:
-				'A personal portfolio website built with Next.js, presenting selected projects, technical stack, work history, and background as a frontend engineer. Includes a hero section with availability status, a categorized stack breakdown, a curated project showcase with tech tags and highlights for each build, a work experience timeline, and an about section. Designed with smooth motion and a clean, production-grade UI to reflect real shipped work rather than a template.',
-			stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'shadcn/ui'],
-			category: 'product',
-			image: '/projects/nextjs-portfolio-project.png',
-			imageAlt: 'Portfolio homepage with hero section, stack, and project showcase',
-			liveUrl: 'https://nextjs-portfolio-project-vert.vercel.app/',
-			githubUrl: 'https://github.com/Ekekwecharles/nextjs-portfolio-project',
-			highlight: 'Personal portfolio site'
+				'A real-time analytics dashboard that visualizes streaming data with interactive charts, live-updating metrics and activity feeds, modelled on trading, DevOps and telemetry dashboards, with optimized rendering and smooth real-time updates.',
+			role: 'Solo build',
+			stack: ['Vue', 'WebSocket', 'ECharts', 'TypeScript'],
+			category: 'experiment',
+			image: '/projects/data-viz.png',
+			imageAlt: 'Dashboard with live charts and metrics',
+			liveUrl: 'https://data-visualization-platform-five.vercel.app/',
+			githubUrl: 'https://github.com/Ekekwecharles/Data-visualization-platform',
+			highlight: 'Live analytics'
+		},
+		{
+			slug: 'invoice-management-app',
+			title: 'Invoice Management App',
+			short: 'Full-stack invoice tracking system.',
+			description:
+				'An invoice management system for creating, tracking and managing client invoices, with full CRUD, draft saving, payment status workflows, filtering, form validation and persistent storage, plus a responsive UI with light and dark mode.',
+			role: 'Solo build',
+			stack: ['React', 'TypeScript', 'Next.js', 'Prisma', 'PostgreSQL'],
+			category: 'experiment',
+			image: '/projects/invoice-app.png',
+			imageAlt: 'Invoice dashboard with billing tables',
+			liveUrl: 'https://invoice-mangement-app-iyye.vercel.app/',
+			githubUrl: 'https://github.com/Ekekwecharles/invoice-mangement-app',
+			highlight: 'Invoicing'
+		},
+		{
+			slug: 'ai-page-summarizer-extension',
+			title: 'AI Page Summarizer Extension',
+			short: 'Chrome extension that summarizes any web page with AI.',
+			description:
+				'A Manifest V3 extension that extracts readable text from the active tab, sends it to a Node.js proxy and shows a structured summary in the popup. OpenAI is called first; if that fails, Gemini takes over automatically.',
+			role: 'Solo build',
+			stack: ['React', 'TypeScript', 'Node.js', 'WebExtensions API', 'OpenAI', 'Gemini'],
+			category: 'experiment',
+			image: '/projects/ai-summarizer.png',
+			imageAlt: 'Browser extension popup showing a page summary',
+			liveUrl: '',
+			githubUrl: 'https://github.com/Ekekwecharles/AI-Page-Summarizer',
+			highlight: 'AI tool'
+		},
+		{
+			slug: 'habit-tracker-app',
+			title: 'Habit Tracker App',
+			short: 'Mobile-first habit tracking PWA.',
+			description:
+				'A mobile-first Progressive Web App for tracking habits, with authentication, protected routes, full CRUD for habits, daily completion tracking, streaks, local persistence, and installable, offline-ready PWA support.',
+			role: 'Solo build',
+			stack: ['Next.js', 'TypeScript', 'MongoDB', 'Socket.IO'],
+			category: 'experiment',
+			image: '/projects/habit-tracker.png',
+			imageAlt: 'Mobile habit tracking dashboard',
+			liveUrl: 'https://habit-tracker-app-seven-plum.vercel.app/',
+			githubUrl: 'https://github.com/Ekekwecharles/Habit-Tracker-App',
+			highlight: 'PWA'
 		}
 	],
 
 	interests: [
+		'AI agents',
+		'Product engineering',
+		'Payments',
 		'Frontend architecture',
-		'UI/UX systems',
-		'Design systems',
-		'Animations & micro-interactions',
-		'Performance optimization',
-		'Hackathons',
 		'Electronics repair',
 		'Fitness',
-		'Skating',
-		'Continuous learning'
+		'Skating'
 	],
 
 	bookCallLink: 'https://cal.com/xharlessnow',
@@ -418,10 +512,16 @@ export type AccentPreset = (typeof DATA.accentPresets)[number];
 
 export const projectCategories: { id: ProjectCategory | 'all'; label: string }[] = [
 	{ id: 'all', label: 'All' },
-	{ id: 'product', label: 'Product' },
-	{ id: 'oss', label: 'Open Source' },
-	{ id: 'experiment', label: 'Labs' }
+	{ id: 'team', label: 'Team products' },
+	{ id: 'product', label: 'Personal products' },
+	{ id: 'experiment', label: 'More builds' }
 ];
+
+export const categoryLabel: Record<ProjectCategory, string> = {
+	team: 'Team product',
+	product: 'Product',
+	experiment: 'Build'
+};
 
 export function getProjectBySlug(slug: string): Project | undefined {
 	return DATA.projects.find((p) => p.slug === slug);

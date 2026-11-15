@@ -12,8 +12,11 @@
 				{DATA.profile.name}
 			</p>
 			<p class="mt-2 max-w-md text-sm leading-relaxed text-[var(--text-1)]">
-				Designed as a production-grade SvelteKit reference: motion with guardrails, accessible
-				navigation, and performance budgets that survive Lighthouse and real devices.
+				AI Product Engineer and full-stack engineer in {DATA.profile.location}. Open to full-time
+				roles. Reach me at
+				<a class="text-[var(--accent)] underline-offset-4 hover:underline" href={`mailto:${DATA.profile.email}`}
+					>{DATA.profile.email}</a
+				>.
 			</p>
 		</div>
 		<div class="flex flex-col gap-3">

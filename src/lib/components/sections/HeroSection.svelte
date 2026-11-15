@@ -30,7 +30,11 @@
 			class="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[color-mix(in_oklab,var(--surface-2)_65%,transparent)] px-3 py-1 text-xs font-semibold tracking-[0.22em] text-[var(--text-2)] uppercase"
 			in:fly={{ y: 12, duration: 420, easing: cubicOut, delay: 40 }}
 		>
-			Open for collaborations
+			<span class="relative flex h-2 w-2" aria-hidden="true">
+				<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60"></span>
+				<span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+			</span>
+			{DATA.profile.availability}
 		</p>
 		<h1
 			id="hero-heading"
@@ -48,10 +52,30 @@
 		>
 			{DATA.profile.intro}
 		</p>
+		<p class="mt-3 text-sm text-[var(--text-2)]" in:fade={{ duration: 480, delay: 160 }}>
+			{DATA.profile.location}
+		</p>
+
+		<dl class="mt-10 grid max-w-2xl grid-cols-3 gap-3" in:fade={{ duration: 480, delay: 180 }}>
+			{#each DATA.profile.stats as stat (stat.label)}
+				<div
+					class="rounded-[var(--radius-lg)] border border-[var(--line)] bg-[color-mix(in_oklab,var(--surface-2)_60%,transparent)] px-4 py-3"
+				>
+					<dt class="sr-only">{stat.label}</dt>
+					<dd>
+						<span
+							class="block font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--text-0)]"
+							>{stat.value}</span
+						>
+						<span class="mt-1 block text-xs leading-snug text-[var(--text-2)]">{stat.label}</span>
+					</dd>
+				</div>
+			{/each}
+		</dl>
 
 		<div class="mt-10 flex flex-wrap items-center gap-3" in:fade={{ duration: 480, delay: 200 }}>
 			<Button href="/projects">View projects</Button>
-			<Button href="/resume" variant="outline">Printable resume</Button>
+			<Button href={DATA.profile.resumePdf} variant="outline" download>Download CV</Button>
 			<Button href="/contact" variant="ghost">Contact</Button>
 		</div>
 

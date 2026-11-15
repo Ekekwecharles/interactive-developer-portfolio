@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { DATA } from '$lib/data';
 	import Button from '$lib/components/ui/Button.svelte';
+
+	const skillRows = [
+		{ label: 'AI & Agents', items: DATA.skills.aiWorkflow },
+		{ label: 'Frontend', items: DATA.skills.frontend },
+		{ label: 'Backend', items: DATA.skills.backend },
+		{ label: 'Payments', items: DATA.skills.payments },
+		{ label: 'Tools', items: DATA.skills.tools },
+		{ label: 'Languages', items: DATA.skills.languages }
+	];
 </script>
 
 <svelte:head>
@@ -13,9 +22,8 @@
 			<h1 class="text-3xl font-semibold text-[var(--text-0)]">Resume</h1>
 
 			<div class="flex gap-2">
-				<Button type="button" variant="outline" onclick={() => window.print()}>
-					Print / Save PDF
-				</Button>
+				<Button href={DATA.profile.resumePdf} download>Download PDF</Button>
+				<Button type="button" variant="outline" onclick={() => window.print()}>Print</Button>
 				<Button href="/" variant="ghost">Home</Button>
 			</div>
 		</div>
@@ -40,7 +48,10 @@
 				</p>
 
 				<ul class="mt-4 flex flex-wrap gap-3 text-sm text-[var(--accent)] print:text-neutral-900">
-					<li>{DATA.profile.email}</li>
+					<li>
+						<a href={`mailto:${DATA.profile.email}`} class="underline">{DATA.profile.email}</a>
+					</li>
+					<li class="text-[var(--text-2)] print:text-neutral-700">{DATA.profile.location}</li>
 
 					{#each DATA.profile.socials as s (s.href)}
 						<li>
@@ -55,26 +66,12 @@
 				<h2 class="section-title">Core Skills</h2>
 
 				<div class="mt-3 space-y-2 text-sm text-[var(--text-1)] print:text-neutral-800">
-					<p>
-						<span class="font-semibold text-[var(--text-0)] print:text-black">Frontend:</span>
-						{DATA.skills.frontend.join(', ')}
-					</p>
-					<p>
-						<span class="font-semibold text-[var(--text-0)] print:text-black">Backend:</span>
-						{DATA.skills.backend.join(', ')}
-					</p>
-					<p>
-						<span class="font-semibold text-[var(--text-0)] print:text-black">Tools:</span>
-						{DATA.skills.tools.join(', ')}
-					</p>
-					<p>
-						<span class="font-semibold text-[var(--text-0)] print:text-black">Languages:</span>
-						{DATA.skills.languages.join(', ')}
-					</p>
-					<p>
-						<span class="font-semibold text-[var(--text-0)] print:text-black">AI Workflow:</span>
-						{DATA.skills.aiWorkflow.join(', ')}
-					</p>
+					{#each skillRows as row (row.label)}
+						<p>
+							<span class="font-semibold text-[var(--text-0)] print:text-black">{row.label}:</span>
+							{row.items.join(', ')}
+						</p>
+					{/each}
 				</div>
 			</section>
 
@@ -129,23 +126,27 @@
 				<h2 class="section-title">Projects</h2>
 
 				<div class="mt-4 space-y-5 text-sm">
-					{#each DATA.projects as project}
+					{#each DATA.projects.slice(0, 6) as project (project.slug)}
 						<div>
-							<a
-								href={project.liveUrl}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="font-semibold text-[var(--text-0)] underline-offset-4 transition hover:text-[var(--accent)] hover:underline"
-							>
+							<p class="font-semibold text-[var(--text-0)] print:text-black">
 								{project.title}
-							</a>
-							<!-- <a href="" class="text-green-500">hello</a> -->
-							<br />
-							<p class="text-xs text-[var(--text-2)]">
-								{project.stack.join(' • ')}
+								{#if project.role}
+									<span class="font-normal text-[var(--text-2)] print:text-neutral-600">· {project.role}</span>
+								{/if}
 							</p>
-							<p class="mt-1 text-[var(--text-1)] print:text-neutral-800">
-								{project.description}
+							<p class="mt-1 text-[var(--text-1)] print:text-neutral-800">{project.short}</p>
+							<p class="mt-1 flex flex-wrap gap-x-4 text-xs">
+								{#if project.liveUrl}
+									<a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline-offset-4 hover:underline print:text-black"
+										>{project.liveLabel ?? 'Live site'}</a
+									>
+								{/if}
+								{#if project.githubUrl}
+									<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="text-[var(--accent)] underline-offset-4 hover:underline print:text-black"
+										>{project.githubLabel ?? 'GitHub'}</a
+									>
+								{/if}
+								<span class="text-[var(--text-2)]">{project.stack.slice(0, 6).join(' • ')}</span>
 							</p>
 						</div>
 					{/each}

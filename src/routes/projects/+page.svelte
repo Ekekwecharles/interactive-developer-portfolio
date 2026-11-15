@@ -27,8 +27,8 @@
 			Projects
 		</h1>
 		<p class="mt-4 max-w-2xl text-base text-[var(--text-1)]">
-			Each build is a product decision: motion with purpose, accessible defaults, and
-			telemetry-friendly architecture.
+			Team products I helped build and ship, live products of my own, and smaller builds. Each one
+			links to the live site and the code, with what I personally built.
 		</p>
 
 		<div class="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Filter projects by category">

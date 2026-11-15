@@ -16,7 +16,7 @@
 	<header class="border-b border-[var(--line)] py-16">
 		<div class="container-prose">
 			<p class="text-xs font-semibold tracking-[0.24em] text-[var(--text-2)] uppercase">
-				Case study
+				{project.context ?? 'Project'}
 			</p>
 			<h1
 				class="mt-3 max-w-3xl font-[family-name:var(--font-display)] text-4xl leading-tight font-semibold text-[var(--text-0)] sm:text-5xl"
@@ -27,23 +27,30 @@
 			<p class="mt-4 max-w-2xl text-lg text-[var(--text-1)]" in:fade={{ duration: 400, delay: 80 }}>
 				{project.short}
 			</p>
+			{#if project.role}
+				<p class="mt-4 text-sm font-medium text-[var(--accent)]">{project.role}</p>
+			{/if}
 			<div class="mt-8 flex flex-wrap gap-3">
-				<a
-					class="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[color-mix(in_oklab,var(--accent)_22%,transparent)] px-4 py-2 text-sm font-semibold text-[var(--text-0)] shadow-[0_0_0_1px_var(--line)] transition hover:-translate-y-0.5 hover:cursor-pointer"
-					href={project.liveUrl}
-					target="_blank"
-					rel="noreferrer"
-				>
-					Live demo
-				</a>
-				<a
-					class="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-[var(--line)] px-4 py-2 text-sm font-semibold text-[var(--text-0)] transition hover:cursor-pointer hover:border-[color-mix(in_oklab,var(--accent)_40%,transparent)]"
-					href={project.githubUrl}
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
+				{#if project.liveUrl}
+					<a
+						class="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] bg-[color-mix(in_oklab,var(--accent)_22%,transparent)] px-4 py-2 text-sm font-semibold text-[var(--text-0)] shadow-[0_0_0_1px_var(--line)] transition hover:-translate-y-0.5"
+						href={project.liveUrl}
+						target="_blank"
+						rel="noreferrer"
+					>
+						Visit {project.liveLabel ?? 'live site'} ↗
+					</a>
+				{/if}
+				{#if project.githubUrl}
+					<a
+						class="inline-flex min-h-11 items-center justify-center rounded-[var(--radius-md)] border border-[var(--line)] px-4 py-2 text-sm font-semibold text-[var(--text-0)] transition hover:border-[color-mix(in_oklab,var(--accent)_40%,transparent)]"
+						href={project.githubUrl}
+						target="_blank"
+						rel="noreferrer"
+					>
+						Code: {project.githubLabel ?? 'GitHub'} ↗
+					</a>
+				{/if}
 				<a
 					href="/projects"
 					class="inline-flex min-h-11 items-center justify-center px-4 py-2 text-sm font-semibold text-[var(--text-1)] transition hover:text-[var(--text-0)]"
@@ -82,35 +89,21 @@
 					Overview
 				</h2>
 				<p class="mt-4 text-base leading-relaxed text-[var(--text-1)]">{project.description}</p>
-				<div class="mt-10 space-y-6">
-					<div>
-						<h3 class="text-sm font-semibold tracking-[0.18em] text-[var(--text-2)] uppercase">
-							Act I — Problem
-						</h3>
-						<p class="mt-2 text-sm leading-relaxed text-[var(--text-1)]">
-							Interfaces that look cinematic but feel brittle under load. The goal: ship visuals
-							that stay responsive when data spikes and users tab through quickly.
-						</p>
-					</div>
-					<div>
-						<h3 class="text-sm font-semibold tracking-[0.18em] text-[var(--text-2)] uppercase">
-							Act II — Approach
-						</h3>
-						<p class="mt-2 text-sm leading-relaxed text-[var(--text-1)]">
-							Layered motion (enter transitions, subtle hover), lazy boundaries for heavy media, and
-							semantic structure so keyboard flows stay predictable.
-						</p>
-					</div>
-					<div>
-						<h3 class="text-sm font-semibold tracking-[0.18em] text-[var(--text-2)] uppercase">
-							Act III — Outcome
-						</h3>
-						<p class="mt-2 text-sm leading-relaxed text-[var(--text-1)]">
-							A portfolio-grade surface: fast first paint, resilient interactions, and
-							Lighthouse-friendly budgets without sanding off personality.
-						</p>
-					</div>
-				</div>
+				{#if project.contributions?.length}
+					<h2 class="mt-12 font-[family-name:var(--font-display)] text-2xl font-semibold text-[var(--text-0)]">
+						{project.category === 'team' ? 'What I built' : 'Highlights'}
+					</h2>
+					<ul class="mt-6 space-y-4">
+						{#each project.contributions as c (c.title)}
+							<li
+								class="rounded-[var(--radius-lg)] border border-[var(--line)] bg-[color-mix(in_oklab,var(--surface-1)_90%,transparent)] p-5"
+							>
+								<p class="font-semibold text-[var(--text-0)]">{c.title}</p>
+								<p class="mt-1 text-sm leading-relaxed text-[var(--text-1)]">{c.detail}</p>
+							</li>
+						{/each}
+					</ul>
+				{/if}
 			</div>
 			<aside class="h-fit rounded-[var(--radius-xl)] p-6 glass-panel">
 				<h2 class="text-sm font-semibold tracking-[0.18em] text-[var(--text-2)] uppercase">

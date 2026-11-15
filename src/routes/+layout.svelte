@@ -28,7 +28,8 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={favicon} type="image/svg+xml" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 	<link
@@ -37,8 +38,15 @@
 	/>
 	<meta
 		name="description"
-		content="Immersive SvelteKit portfolio showcasing motion, accessibility, and performance-first frontend engineering."
+		content="Ekekwe Charles — AI Product Engineer and full-stack engineer (React, Next.js, TypeScript, Node.js). Two-time HNG Internship Finalist, part of the team behind Ziki and Zedu."
 	/>
+	<meta property="og:title" content="Ekekwe Charles — AI Product Engineer & Full-Stack Engineer" />
+	<meta
+		property="og:description"
+		content="I build AI-powered products end to end. Part of the team behind Ziki and Zedu. Open to full-time roles."
+	/>
+	<meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <a href="#main-content" class="skip-link" onclick={handleSkip}>Skip to main content</a>

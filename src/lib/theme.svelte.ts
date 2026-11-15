@@ -1,5 +1,5 @@
 import { browser } from '$app/environment';
-import type { AccentPreset } from '$lib/site';
+import type { AccentPreset } from '$lib/data';
 
 export type ThemeMode = 'light' | 'dark';
 

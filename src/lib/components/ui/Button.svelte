@@ -10,6 +10,7 @@
 		class: className = '',
 		disabled = false,
 		onclick,
+		download = false,
 		children
 	}: {
 		href?: string;
@@ -18,6 +19,7 @@
 		class?: string;
 		disabled?: boolean;
 		onclick?: (e: MouseEvent) => void;
+		download?: boolean;
 		children: Snippet;
 	} = $props();
 
@@ -34,7 +36,9 @@
 </script>
 
 {#if href}
-	<a {href} class="{base} {styles[variant]} {className}">{@render children()}</a>
+	<a {href} download={download || undefined} class="{base} {styles[variant]} {className}"
+		>{@render children()}</a
+	>
 {:else}
 	<button {type} {disabled} class="{base} {styles[variant]} {className}" {onclick}
 		>{@render children()}</button
