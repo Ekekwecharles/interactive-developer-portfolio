@@ -86,7 +86,7 @@ export const DATA = {
 		tagline:
 			'I build AI-powered products end to end with React, Next.js, TypeScript and Node.js.',
 		intro:
-			'Two-time HNG Internship Finalist and part of the team behind Ziki and Zedu, two live AI products. On Ziki I built the money side end to end: in-app coins, payments, withdrawals and subscriptions.',
+			'Two-time HNG Internship Finalist and part of the team behind Ziki and Zedu, two live AI products. On Ziki I built the money side end to end (in-app coins, payments, project funding, withdrawals and subscriptions), integrated GitHub into the platform, and built PR relinking.',
 		email: 'ekekwecharles50@gmail.com',
 		location: 'Port Harcourt, Nigeria',
 		availability: 'Open to full-time roles · Remote, hybrid or on-site',
@@ -110,7 +110,7 @@ export const DATA = {
 			{ label: 'X', href: 'https://x.com/xharlessnow', icon: 'x' }
 		],
 		summary:
-			'AI Product Engineer and full-stack engineer, and a two-time HNG Internship Finalist (HNG 14 Software Engineering, HNG 15 AI Product Engineering). Part of the team that built Ziki, a platform where AI agents and developers fix software and get paid, and Zedu, an AI-powered learning platform for bootcamps and schools. On Ziki I built the money side end to end: in-app coins, payments, withdrawals and subscriptions. I work mainly in React, Next.js, TypeScript and Node.js, and ship fast using AI coding agents without dropping review standards.'
+			'AI Product Engineer and full-stack engineer, and a two-time HNG Internship Finalist (HNG 14 Software Engineering, HNG 15 AI Product Engineering). Part of the team that built Ziki, a platform where AI agents and developers fix software and get paid, and Zedu, an AI-powered learning platform for bootcamps and schools. On Ziki I built the money side end to end (in-app coins, payments, project funding, withdrawals and subscriptions), integrated GitHub into the platform, and built PR relinking. I work mainly in React, Next.js, TypeScript and Node.js, and ship fast using AI coding agents without dropping review standards.'
 	},
 
 	skills: {
@@ -181,9 +181,9 @@ export const DATA = {
 			period: 'Sep 2026 – Nov 2026',
 			points: [
 				'Graduated as a Finalist in the AI Product Engineering track, a remote, elimination-based program where every stage must be passed to continue',
-				'Part of the team that built Ziki (ziki.dev). Built five of its features, including the full coins, payments and withdrawal system and subscriptions, and still contributing',
+				'Part of the team that built Ziki (ziki.dev). Built its coins, payments, project funding, withdrawal and subscription systems, integrated GitHub into Ziki, and built PR relinking for pull requests closed without merging; still contributing',
 				'Built features and fixed bugs on Zedu (zedu.chat) across its web app, desktop app and Go backend, and on Zedu Office, its 3D virtual-office version',
-				'Built and launched snowaregadgets.com, a full e-commerce store with online payments and an admin dashboard, and contributed to StartNG (start.ng)'
+				'Built and launched snowaregadgets.com, a full e-commerce store for my own phone and gadget business, with online payments and an admin dashboard, and contributed to StartNG (start.ng)'
 			]
 		},
 		{
@@ -198,8 +198,8 @@ export const DATA = {
 		},
 		{
 			role: 'Full-Stack / Frontend Engineer',
-			company: 'Upwork (Freelance)',
-			period: 'Jan 2023 – Present',
+			company: 'Freelance',
+			period: '2023 – Present',
 			points: [
 				'Delivered production-ready web applications for international clients across fintech, e-commerce, and SaaS',
 				'Integrated REST APIs, authentication systems, and payment workflows into client-facing products',
@@ -216,11 +216,11 @@ export const DATA = {
 			]
 		},
 		{
-			role: 'Lead Engineer & Operations Manager',
+			role: 'Founder, Lead Engineer & Operations Manager',
 			company: 'Snoware Gadgets & Partner Shops',
 			period: 'Jun 2015 – Present',
 			points: [
-				'Run a phone and gadget business: device diagnostics and repair, training junior technicians, sales, customer support and vendor relationships'
+				'Founded and run my own phone and gadget business: device diagnostics and repair, training junior technicians, sales, customer support and vendor relationships'
 			]
 		}
 	],
@@ -238,7 +238,7 @@ export const DATA = {
 		},
 		{
 			school: 'ALX Africa',
-			degree: 'Software Engineering Program',
+			degree: 'Software Engineering Programme (15 months, graduated)',
 			period: '2022 – 2024',
 			details: 'C, Bash, Linux, Python, Flask, Django, JavaScript, React, systems programming'
 		}
@@ -264,9 +264,14 @@ export const DATA = {
 					detail: 'Built Ziki’s subscription plans and the payment flow behind them.'
 				},
 				{
-					title: 'GitHub status',
+					title: 'Project funding',
 					detail:
-						'Shows inside a Ziki issue what is blocking its pull request from merging, so the owner can act on it or send it back to the fixer without leaving Ziki.'
+						'Owners fund a project with a budget; Ziki automatically spends it on each issue, pays the agents who fix them, and alerts the owner when funds are running low.'
+				},
+				{
+					title: 'GitHub integration and PR status',
+					detail:
+						'Integrated GitHub into Ziki. A Ziki issue now shows what is blocking its pull request from merging, so the owner can act on it or send it back to the fixer without leaving Ziki.'
 				},
 				{
 					title: 'PR relink',
@@ -326,10 +331,10 @@ export const DATA = {
 		{
 			slug: 'snoware-gadgets-store',
 			title: 'Snoware Gadgets Store',
-			short: 'Live e-commerce platform for a phone and gadget business.',
+			short: 'Live e-commerce store for my own phone and gadget business.',
 			description:
 				'A full online store for my phone and gadget business in Port Harcourt: product catalogue across phones, laptops, gaming and Starlink, checkout with Paystack, email/password and Google sign-in, order emails, and an admin dashboard for products, stock, photos, delivery zones and fees, and homepage banners.',
-			role: 'Sole engineer · built and launched',
+			role: 'Founder & sole engineer · built and launched',
 			context: 'Live business store, taking real orders',
 			contributions: [
 				{
@@ -431,6 +436,43 @@ export const DATA = {
 			liveUrl: 'https://end-2-end-encryption-chat-app.vercel.app/login',
 			githubUrl: 'https://github.com/Ekekwecharles/End-2-End-Encryption-Chat-app',
 			highlight: 'Encrypted chat'
+		},
+		{
+			slug: 'coin-dash-arena',
+			title: 'Coin Dash Arena',
+			short: '3D browser arena game built with three.js for start.ng.',
+			description:
+				'You play as your own start.ng character on a floating island: grab coins to keep the clock alive, dodge spike balls that come faster the longer you survive, and dash through danger. Signed-in players see their own character and save their runs to a live leaderboard. Works on desktop and phones.',
+			role: 'Solo build · HNG 15 · start.ng',
+			context: 'Live on start.ng',
+			contributions: [
+				{
+					title: 'Your start.ng character in 3D',
+					detail:
+						'Builds the player’s 3D character from their start.ng style settings (body, colours, hair, hat, accessory), and updates it when they change their look.'
+				},
+				{
+					title: 'Survival gameplay',
+					detail:
+						'Coins add points and time, time orbs add 5 seconds, spike balls cost 5 seconds and knock you back, and difficulty ramps up the longer you last.'
+				},
+				{
+					title: 'Leaderboard and saved runs',
+					detail: 'Coins and survival-time leaderboard, with runs saved for signed-in players.'
+				},
+				{
+					title: 'Desktop and mobile controls',
+					detail: 'WASD or arrow keys on desktop, an on-screen joystick and Dash button on phones.'
+				}
+			],
+			stack: ['JavaScript', 'three.js', 'start.ng API'],
+			category: 'product',
+			image: '/projects/coin-dash-arena.webp',
+			imageAlt: 'Coin Dash Arena start screen with a 3D character on a floating island',
+			liveUrl: 'https://coin-dash-arena.start.ng',
+			githubUrl: 'https://github.com/Ekekwecharles/coin-dash-arena',
+			liveLabel: 'coin-dash-arena.start.ng',
+			highlight: '3D browser game'
 		},
 		{
 			slug: 'real-time-data-visualization-platform',
